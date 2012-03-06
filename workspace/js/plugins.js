@@ -16,11 +16,9 @@ window.log = function(){
 
 // Sets window properties as cookies for server-side optimizations
 $(window).resize(function () {
-	document.cookie = "rwd-height=" + $(window).height() + "; path=/";
-	document.cookie = "rwd-width=" + $(window).width() + "; path=/";
-	document.cookie = "rwd-orientation" + window.orientation + ";path=/";
+	document.cookie = "screen-height=" + $(window).height() + "; path=/";
+	document.cookie = "screen-width=" + $(window).width() + "; path=/";
+	document.cookie = "screen-orientation" + window.orientation + ";path=/";
 });
-
-
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
