@@ -17,8 +17,6 @@ window.log = function(){
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
 
-(function(widthcookie){
-
 // Screen width
 //record width cookie for subsequent loads
 
