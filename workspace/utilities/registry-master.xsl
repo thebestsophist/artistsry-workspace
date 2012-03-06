@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+<xsl:import href="../utilities/user-agent-feature-detection.xsl" />
 <xsl:import href="date-time.xsl"/>
 <xsl:import href="page-title.xsl"/>
 <xsl:import href="typography.xsl"/>
 <xsl:import href="registry-settings.xsl"/>
+
 
 <xsl:output method="xml" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" omit-xml-declaration="yes" encoding="UTF-8" indent="yes"/>
 <xsl:variable name="is-logged-in" select="/data/events/member-login-info/@logged-in"/>
@@ -49,6 +51,7 @@
 
 	<!-- Most JavaScript at the bottom, except Modernizr and google API (to deal with webfonts) -->
 	<script src="{$workspace}/js/modernizr-2.5.2.min.js"></script>
+	<xsl:call-template name="user-agent-feature-detection" />
 </head>
 <body>
 	<xsl:attribute name="id">
