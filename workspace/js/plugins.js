@@ -17,7 +17,6 @@ window.log = function(){
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
 
-// Screen width
-//record width cookie for subsequent loads
+document.cookie = "rwd-height=" + $(window).width() + "; path=/";
+document.cookie = "rwd-width=" + $(window).height() + "; path=/";
 
-document.cookie = "rwd-resolution=" + screen.width + "; path=/";
