@@ -19,7 +19,7 @@
       <script>
         <!-- Set breakpoints for JIT images -->
         var b = function() {
-          var a = [480, 768, 960],
+          var a = [480, 768],
               s = Math.round(Math.max(screen.height,screen.width) * ('devicePixelRatio' in window ? devicePixelRatio : 1));
           for (i in a) if (a[i] >= s) return a[i]; return a.pop();
         }();

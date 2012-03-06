@@ -16,11 +16,3 @@ window.log = function(){
 
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
-
-// Screen width
-//record width cookie for subsequent loads
-(function( win ){
-var		date			= new Date();
-		date.setTime(date.getTime()+(5/*5 sec*/*1000));
-		document.cookie = "rwd-resolution=" + screen.width + ";expires=" + date.toGMTString() +"; path=/";
-});

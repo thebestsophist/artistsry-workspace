@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+<xsl:import href="../utilities/user-agent-feature-detection.xsl" />
 <xsl:import href="date-time.xsl"/>
 <xsl:import href="page-title.xsl"/>
 <xsl:import href="typography.xsl"/>
@@ -50,6 +51,7 @@
 
 	<!-- Most JavaScript at the bottom, except Modernizr and google API (to deal with webfonts) -->
 	<script src="{$workspace}/js/modernizr-2.5.2.min.js"></script>
+	<xsl:call-template name="user-agent-feature-detection" />
 </head>
 <body>
 	<xsl:attribute name="id">
