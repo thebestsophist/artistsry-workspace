@@ -17,6 +17,6 @@ window.log = function(){
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
 
-document.cookie = "rwd-height=" + $(window).width() + "; path=/";
-document.cookie = "rwd-width=" + $(window).height() + "; path=/";
+document.cookie = "rwd-height=" + $(window).height() + "; path=/";
+document.cookie = "rwd-width=" + $(window).width() + "; path=/";
 
