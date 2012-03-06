@@ -148,8 +148,8 @@ $one-column-rem-48: 10.875rem;
 $one-column-px-60: 222px;
 $one-column-rem-60: 13.875rem;
 @mixin one-column {
-	@media screen and (min-width: 48em) { width: $one-column-px-48; width: $one-column-rem-48; }
-	@media screen and (min-width: 60em) { width: $one-column-px-60; width: $one-column-rem-60; }
+	@media screen and (min-width: 768px) { width: $one-column-px-48; width: $one-column-rem-48; }
+	@media screen and (min-width: 960px) { width: $one-column-px-60; width: $one-column-rem-60; }
 }
 
 $two-column-px-48: 372px;
@@ -157,8 +157,8 @@ $two-column-rem-48: 23.25rem;
 $two-column-px-60: 468px;
 $two-column-rem-60: 29.25rem;
 @mixin two-column {
-	@media screen and (min-width: 48em) { width: $two-column-px-48; width: $two-column-rem-48; }
-	@media screen and (min-width: 60em) { width: $two-column-px-60; width: $two-column-rem-60; }
+	@media screen and (min-width: 768px) { width: $two-column-px-48; width: $two-column-rem-48; }
+	@media screen and (min-width: 960px) { width: $two-column-px-60; width: $two-column-rem-60; }
 }
 
 $three-column-px-48: 570px;
@@ -166,8 +166,8 @@ $three-column-rem-48: 35.625rem;
 $three-column-px-60: 714px;
 $three-column-rem-60: 44.625rem;
 @mixin three-column {
-	@media screen and (min-width: 48em) { width: $three-column-px-48; width: $three-column-rem-48; }
-	@media screen and (min-width: 60em) { width: $three-column-px-60; width: $three-column-rem-60; }
+	@media screen and (min-width: 768px) { width: $three-column-px-48; width: $three-column-rem-48; }
+	@media screen and (min-width: 960px) { width: $three-column-px-60; width: $three-column-rem-60; }
 }
 
 $four-column-px-48: 768px;
@@ -175,26 +175,26 @@ $four-column-rem-48: 48rem;
 $four-column-px-60: 960px;
 $four-column-rem-60: 60rem;
 @mixin four-column {
-	@media screen and (min-width: 48em) { width: $four-column-px-48; width: $four-column-rem-48; }
-	@media screen and (min-width: 60em) { width: $four-column-px-60; width: $four-column-rem-60; }
+	@media screen and (min-width: 768px) { width: $four-column-px-48; width: $four-column-rem-48; }
+	@media screen and (min-width: 960px) { width: $four-column-px-60; width: $four-column-rem-60; }
 }
 
 @mixin gutter-left {
-	@media screen and (min-width: 48em) { margin-left: $ms-line-height-px-48; margin-left: $ms-line-height-rem-48; }
+	@media screen and (min-width: 768px) { margin-left: $ms-line-height-px-48; margin-left: $ms-line-height-rem-48; }
 }
 
 @mixin gutter-right {
-	@media screen and (min-width: 48em) { margin-right: $ms-line-height-px-48; margin-right: $ms-line-height-rem-48; }
+	@media screen and (min-width: 768px) { margin-right: $ms-line-height-px-48; margin-right: $ms-line-height-rem-48; }
 }
 
 @mixin side-line {
-	@media screen and (min-width: 48em) {
+	@media screen and (min-width: 768px) {
 		margin-left: -12px;
 		margin-left: -.75rem;
 		padding-left: 11px;
 		padding-left: .74rem;
 	}
-	@media screen and (min-width: 60em) {
+	@media screen and (min-width: 960px) {
 		margin-left: $ms-line-height-px-48;
 		margin-left: -$ms-line-height-rem-48;
 		padding-left: 23px;

@@ -176,7 +176,7 @@ section[role=main] {
 		header { // need to fix for responsive design
 			margin: $ms-line-height-px-48*2 0 $ms-line-height-rem-48*2;
 			
-			@media screen and (min-width: 48em) { 
+			@media screen and (min-width: 768px) { 
 				h1 { 
 					width: $three-column-px-48; 
 					width: $three-column-rem-48;
@@ -184,7 +184,7 @@ section[role=main] {
 					margin: 0;
 				}
 			}
-			@media screen and (min-width: 60em) { h1 { width: $three-column-px-60; width: $three-column-rem-60; }}
+			@media screen and (min-width: 960px) { h1 { width: $three-column-px-60; width: $three-column-rem-60; }}
 			
 			div {
 				@include one-column;
