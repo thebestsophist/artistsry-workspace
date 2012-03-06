@@ -14,10 +14,13 @@ window.log = function(){
 (function(b){function c(){}for(var d="assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,timeStamp,profile,profileEnd,time,timeEnd,trace,warn".split(","),a;a=d.pop();){b[a]=b[a]||c}})((function(){try
 {console.log();return window.console;}catch(err){return window.console={};}})());
 
-
-// place any jQuery/helper plugins in here, instead of separate, slower script files.
+// Sets window properties as cookies for server-side optimizations
 $(window).resize(function () {
 	document.cookie = "rwd-height=" + $(window).height() + "; path=/";
 	document.cookie = "rwd-width=" + $(window).width() + "; path=/";
+	document.cookie = "rwd-orientation" + window.orientation + ";path=/";
 });
 
+
+
+// place any jQuery/helper plugins in here, instead of separate, slower script files.
