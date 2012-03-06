@@ -1,0 +1,10 @@
+/* Media Queries are include in the _page to take advantage of bubbling out features */
+
+// ==|== print styles =======================================================
+// Print styles.
+// Inlined to avoid required HTTP connection: h5bp.com/r
+// ========================================================================== */
+
+@media print {
+  @include h5bp-media-print;
+}

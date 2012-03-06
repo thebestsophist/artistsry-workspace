@@ -1,0 +1,219 @@
+// This file must be imported before loading html5-boilerplate
+@import "compass/css3";
+@import "compass/utilities";
+
+// Basic colors
+$blue: #036;
+$light-blue: #69c;
+$green: #363;
+$light-green: #9c9;
+$purple: #336;
+$light-purple: #99c;
+$gold: #663;
+$light-gold: #ff9;
+$red: #633;
+$light-red: #c99;
+$black: #111;
+$gray: #666;
+$light-gray: #aaa;
+$white: #fff;
+
+$font-color: $black !default;
+
+$link-color: $blue !default;
+$link-hover-color: $light-blue !default;
+$link-visited-color: $purple !default;
+
+$selected-font-color: $white !default;
+$selected-background-color: $blue !default;
+
+$valid-background-color: $light-green !default;
+$invalid-background-color: $light-red !default;
+
+/*--------------------------------------------------
+	Mixins 
+  --------------------------------------------------
+
+	Typography
+
+	Scale: http://modularscale.com/scale/?px1=16&px2=12&ra1=1.5&ra2=0
+
+  ---------------------------------------------------
+*/
+
+
+/*
+	These are here in case you want to set elements at the type 
+	size instead of the grid size (eg icons).
+*/
+
+$ms-line-height-px-48: 24px;
+$ms-line-height-rem-48: 1.5rem;
+
+$ms-base-px: 16px;
+$ms-base-rem: 1rem;
+
+$ms-small-px: 12px;
+$ms-small-rem: .65rem;
+
+$ms-1-px: 18px;
+$ms-1-rem: 1.125rem;
+
+$ms-2-px: 27px;
+$ms-2-rem: 1.688rem;
+
+$ms-3-px: 36px;
+$ms-3-rem: 2.25rem;
+
+$ms-4-px: 54px;
+$ms-4-rem: 3.375rem;
+
+$ms-5-px: 81px;
+$ms-5-rem: 5.063rem;
+
+
+@mixin line-height {
+	line-height: $ms-line-height-px-48;
+	line-height: $ms-line-height-rem-48;
+}
+
+@mixin ms-margin-top {
+	margin-top: $ms-line-height-px-48;
+	margin-top: $ms-line-height-rem-48;
+
+}
+
+@mixin ms-margin-bottom {
+	margin-bottom: $ms-line-height-px-48;
+	margin-bottom: $ms-line-height-rem-48;
+}
+
+@mixin ms-base {
+	font-size: $ms-base-px;
+	font-size: $ms-base-rem;
+}
+
+@mixin ms-small {
+	font-size: $ms-small-px;
+	font-size: $ms-small-rem;
+}
+
+@mixin ms-1 {
+	font-size: $ms-1-px;
+	font-size: $ms-1-rem;
+}
+
+
+
+@mixin ms-2 {
+	font-size: $ms-2-px;
+	font-size: $ms-2-rem;
+}
+
+@mixin ms-3 {
+	font-size: $ms-3-px;
+	font-size: $ms-3-rem;
+}
+
+@mixin ms-4 {
+	font-size: $ms-4-px;
+	font-size: $ms-4-rem;
+}
+
+@mixin ms-5 {
+	font-size: $ms-5-px;
+	font-size: $ms-5-rem;
+}
+
+
+/*--------------------------------------------------
+
+	Grid
+
+	The 6-column layout kicks in at 768px and adjusts
+	at 960px. Decided to use non-flexible layouts for 
+	greater typographic	control and better size
+	control for images and other multimedia. Also, I'm 
+	not willing to give up that much control to
+	brainless browsers.
+
+	Alternatively, I'm just not smart enough to think
+	in flexible grids. If you are, please edit
+	and share.
+
+  ---------------------------------------------------
+*/
+$one-column-px-48: 174px;
+$one-column-rem-48: 10.875rem;
+$one-column-px-60: 222px;
+$one-column-rem-60: 13.875rem;
+@mixin one-column {
+	@media screen and (min-width: 48em) { width: $one-column-px-48; width: $one-column-rem-48; }
+	@media screen and (min-width: 60em) { width: $one-column-px-60; width: $one-column-rem-60; }
+}
+
+$two-column-px-48: 372px;
+$two-column-rem-48: 23.25rem;
+$two-column-px-60: 468px;
+$two-column-rem-60: 29.25rem;
+@mixin two-column {
+	@media screen and (min-width: 48em) { width: $two-column-px-48; width: $two-column-rem-48; }
+	@media screen and (min-width: 60em) { width: $two-column-px-60; width: $two-column-rem-60; }
+}
+
+$three-column-px-48: 570px;
+$three-column-rem-48: 35.625rem;
+$three-column-px-60: 714px;
+$three-column-rem-60: 44.625rem;
+@mixin three-column {
+	@media screen and (min-width: 48em) { width: $three-column-px-48; width: $three-column-rem-48; }
+	@media screen and (min-width: 60em) { width: $three-column-px-60; width: $three-column-rem-60; }
+}
+
+$four-column-px-48: 768px;
+$four-column-rem-48: 48rem;
+$four-column-px-60: 960px;
+$four-column-rem-60: 60rem;
+@mixin four-column {
+	@media screen and (min-width: 48em) { width: $four-column-px-48; width: $four-column-rem-48; }
+	@media screen and (min-width: 60em) { width: $four-column-px-60; width: $four-column-rem-60; }
+}
+
+@mixin gutter-left {
+	@media screen and (min-width: 48em) { margin-left: $ms-line-height-px-48; margin-left: $ms-line-height-rem-48; }
+}
+
+@mixin gutter-right {
+	@media screen and (min-width: 48em) { margin-right: $ms-line-height-px-48; margin-right: $ms-line-height-rem-48; }
+}
+
+@mixin side-line {
+	@media screen and (min-width: 48em) {
+		margin-left: -12px;
+		margin-left: -.75rem;
+		padding-left: 11px;
+		padding-left: .74rem;
+	}
+	@media screen and (min-width: 60em) {
+		margin-left: $ms-line-height-px-48;
+		margin-left: -$ms-line-height-rem-48;
+		padding-left: 23px;
+		padding-left: 1.49rem;
+	}
+}
+
+// Transitions
+$color-transition: color 0.6s ease;
+$background-transition: background 0.3s ease;
+$border-transition: border 0.3s ease;
+$opacity-transition: opacity 0.3s ease;
+@mixin buttonification {
+	border: none;
+	font-size: $ms-line-height-px-48;
+	font-size: $ms-line-height-rem-48;
+	padding: 7px 12px;
+	padding: .44rem .75rem;
+	@include border-radius(4px);
+	@include border-radius(.25rem);	
+	@include transition($color-transition, $background-transition, $border-transition);
+}

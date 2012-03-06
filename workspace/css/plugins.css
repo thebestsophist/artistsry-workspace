@@ -1,0 +1,427 @@
+/* jQuery UI */
+.ui-tabs-hide { display: none; }
+
+/*! fancyBox v2.0.4 fancyapps.com | fancyapps.com/fancybox/#license */
+.fancybox-tmp iframe, .fancybox-tmp object {
+	vertical-align: top;
+	padding: 0;
+	margin: 0;
+}
+
+.fancybox-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1002;
+}
+
+.fancybox-outer {
+	padding: 0;
+	margin: 0;
+	background: #f9f9f9;
+	color: #444;
+	text-shadow: none;
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+			border-radius: 4px;
+}
+
+.fancybox-opened {
+	z-index: 1003;	
+}
+
+.fancybox-opened .fancybox-outer {
+	-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+	   -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+	        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.fancybox-inner {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	outline: none;
+	overflow: hidden;
+}
+
+.fancybox-error {
+	color: #444;
+    font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0;
+    padding: 10px;
+}
+
+.fancybox-image, .fancybox-iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+}
+
+.fancybox-image {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+	background-image: url('images/fancybox_sprite.png');
+}
+
+#fancybox-loading {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -22px;
+	margin-left: -22px;
+	background-position: 0 -108px;
+	opacity: 0.8;
+	cursor: pointer;
+	z-index: 1010;
+}
+
+#fancybox-loading div {
+	width: 44px;
+	height: 44px;
+	background: url('images/fancybox_loading.gif') center center no-repeat;
+}
+
+.fancybox-close {
+	position: absolute;
+	top: -18px;
+	right: -18px;
+	width: 36px;
+	height: 36px;
+	cursor: pointer;
+	z-index: 1004;
+}
+
+.fancybox-prev, .fancybox-next {
+	position: absolute;
+	top: 0;
+	width: 40%;
+	height: 100%;
+	cursor: pointer;
+	background: transparent url('images/blank.gif'); /* helps IE */
+	z-index: 1003;
+}
+
+.fancybox-prev {
+	left: 0;	
+}
+
+.fancybox-next {
+	right: 0;
+}
+
+.fancybox-prev span, .fancybox-next span {
+	position: absolute;
+	top: 50%;
+	width: 36px;
+	height: 36px;
+	margin-top: -18px;
+	cursor: pointer;
+	visibility: hidden;
+	z-index: 1003;
+}
+
+.fancybox-prev span {
+	left: 20px;
+	background-position: 0 -36px;
+}
+
+.fancybox-next span {
+	right: 20px;
+	background-position: 0 -72px;
+}
+
+.fancybox-prev:hover span, .fancybox-next:hover span {
+	visibility: visible;
+}
+
+.fancybox-tmp {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+	padding: 0;
+	overflow: visible;
+	visibility: hidden;
+}
+
+/* Overlay helper */
+
+#fancybox-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	display: none;
+	z-index: 1001;
+	background: #000;
+}
+
+/* Title helper */
+
+.fancybox-title {
+	visibility: hidden;	
+	font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	position: relative;
+	text-shadow: none;
+	z-index: 1005;
+}
+
+.fancybox-opened .fancybox-title {
+	visibility: visible;
+}
+
+.fancybox-title-float-wrap {
+	position: absolute;
+	bottom: 0;
+	right: 50%;
+	margin-bottom: -35px;
+	z-index: 1003;
+	text-align: center;
+}
+
+.fancybox-title-float-wrap .child {
+	display: inline-block;
+	margin-right: -100%;
+	padding: 2px 20px;
+	background: transparent; /* Fallback for web browsers that doesn't support RGBa */
+	background: rgba(0, 0, 0, 0.8);
+	-webkit-border-radius: 15px;
+	   -moz-border-radius: 15px;
+			border-radius: 15px;
+	text-shadow: 0 1px 2px #222;
+	color: #FFF;
+	font-weight: bold;
+	line-height: 24px;
+	white-space: nowrap;
+}
+
+.fancybox-title-outside-wrap {
+	position: relative;
+	margin-top: 10px;
+	color: #fff;
+}
+
+.fancybox-title-inside-wrap {
+	margin-top: 10px;
+}
+
+.fancybox-title-over-wrap {
+	position: absolute;
+	bottom: 0;
+	left: 0;	
+	color: #fff;
+	padding: 10px;
+	background: #000;
+	background: rgba(0, 0, 0, .8);
+}
+
+/* -------------------------------------------------------------------
+// markItUp! Universal MarkUp Engine, JQuery plugin
+// By Jay Salvat - http://markitup.jaysalvat.com/
+// ------------------------------------------------------------------*/
+.markItUp * {
+	margin:0px; padding:0px;
+	outline:none;
+}
+.markItUp a:link,
+.markItUp a:visited {
+	color:#000;
+	text-decoration:none;
+}
+.markItUp  {
+	width:700px;
+	margin:5px 0 5px 0;
+	border:5px solid #F5F5F5;	
+}
+.markItUpContainer  {
+	border:1px solid #3C769D;	
+	background:#FFF url(images/bg-container.png) repeat-x top left;
+	padding:5px 5px 2px 5px;
+	font:11px Verdana, Arial, Helvetica, sans-serif;
+}
+.markItUpEditor {
+	font:12px 'Courier New', Courier, monospace;
+	padding:5px 5px 5px 35px;
+	border:3px solid #3C769D;
+	width:643px;
+	height:320px;
+	background:#FFF url(images/bg-editor.png) no-repeat;
+	clear:both;
+	line-height:18px;
+	overflow:auto;
+}
+.markItUpPreviewFrame	{
+	overflow:auto;
+	background-color:#FFFFFF;
+	border:1px solid #3C769D;
+	width:99.9%;
+	height:300px;
+	margin:5px 0;
+}
+.markItUpFooter {
+	width:100%;
+	cursor:n-resize;
+}
+.markItUpResizeHandle {
+	overflow:hidden;
+	width:22px; height:5px;
+	margin-left:auto;
+	margin-right:auto;
+	background-image:url(images/handle.png);
+	cursor:n-resize;
+}
+/***************************************************************************************/
+/* first row of buttons */
+.markItUpHeader ul li	{
+	list-style:none;
+	float:left;
+	position:relative;
+}
+.markItUpHeader ul li ul{
+	display:none;
+}
+.markItUpHeader ul li:hover > ul{
+	display:block;
+}
+.markItUpHeader ul .markItUpDropMenu {
+	background:transparent url(images/menu.png) no-repeat 115% 50%;
+	margin-right:5px;
+}
+.markItUpHeader ul .markItUpDropMenu li {
+	margin-right:0px;
+}
+.markItUpHeader ul .markItUpSeparator {
+	margin:0 10px;
+	width:1px;
+	height:16px;
+	overflow:hidden;
+	background-color:#CCC;
+}
+.markItUpHeader ul ul .markItUpSeparator {
+	width:auto; height:1px;
+	margin:0px;
+}
+/* next rows of buttons */
+.markItUpHeader ul ul {
+	display:none;
+	position:absolute;
+	top:18px; left:0px;	
+	background:#F5F5F5;
+	border:1px solid #3C769D;
+	height:inherit;
+}
+.markItUpHeader ul ul li {
+	float:none;
+	border-bottom:1px solid #3C769D;
+}
+.markItUpHeader ul ul .markItUpDropMenu {
+	background:#F5F5F5 url(images/submenu.png) no-repeat 100% 50%;
+}
+/* next rows of buttons */
+.markItUpHeader ul ul ul {
+	position:absolute;
+	top:-1px; left:150px;
+}
+.markItUpHeader ul ul ul li {
+	float:none;
+}
+.markItUpHeader ul a {
+	display:block;
+	width:16px; height:16px;
+	text-indent:-10000px;
+	background-repeat:no-repeat;
+	padding:3px;
+	margin:0px;
+}
+.markItUpHeader ul ul a {
+	display:block;
+	padding-left:0px;
+	text-indent:0;
+	width:120px; 
+	padding:5px 5px 5px 25px;
+	background-position:2px 50%;
+}
+.markItUpHeader ul ul a:hover  {
+	color:#FFF;
+	background-color:#3C769D;
+}
+/***************************************************************************************/
+.html .markItUpEditor {
+	background-image:url(images/bg-editor-html.png);
+}
+.markdown .markItUpEditor {
+	background-image:url(images/bg-editor-markdown.png);
+}
+.textile .markItUpEditor {
+	background-image:url(images/bg-editor-textile.png);
+}
+.bbcode .markItUpEditor {
+	background-image:url(images/bg-editor-bbcode.png);
+}
+.wiki .markItUpEditor,
+.dotclear .markItUpEditor {
+	background-image:url(images/bg-editor-wiki.png);
+}
+
+/* -------------------------------------------------------------------
+// markItUp!
+// By Jay Salvat - http://markitup.jaysalvat.com/
+// ------------------------------------------------------------------*/
+.markItUp .markItUpButton1 a {
+	background-image:url(images/h1.png); 
+}
+.markItUp .markItUpButton2 a {
+	background-image:url(images/h2.png); 
+}
+.markItUp .markItUpButton3 a {
+	background-image:url(images/h3.png); 
+}
+.markItUp .markItUpButton4 a {
+	background-image:url(images/h4.png); 
+}
+.markItUp .markItUpButton5 a {
+	background-image:url(images/h5.png); 
+}
+.markItUp .markItUpButton6 a {
+	background-image:url(images/h6.png); 
+}
+
+.markItUp .markItUpButton7 a {
+	background-image:url(images/bold.png);
+}
+.markItUp .markItUpButton8 a {
+	background-image:url(images/italic.png);
+}
+
+.markItUp .markItUpButton9 a {
+	background-image:url(images/list-bullet.png);
+}
+.markItUp .markItUpButton10 a {
+	background-image:url(images/list-numeric.png);
+}
+
+.markItUp .markItUpButton11 a {
+	background-image:url(images/picture.png); 
+}
+.markItUp .markItUpButton12 a {
+	background-image:url(images/link.png);
+}
+
+.markItUp .markItUpButton13 a	{
+	background-image:url(images/quotes.png);
+}
+.markItUp .markItUpButton14 a	{
+	background-image:url(images/code.png);
+}
+
+.markItUp .preview a {
+	background-image:url(images/preview.png);
+}

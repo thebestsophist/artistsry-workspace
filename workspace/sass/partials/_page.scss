@@ -1,0 +1,605 @@
+//--------------------------------------------------
+// Layout is based on mobile-first design process.
+// The basic layout is portrait-mode mobile screens
+// starting at 320px wide. The 6-column layout kicks
+// in at 768px and adjusts at 960px. Decided to use
+// non-flexible layouts for greater typographic
+// control and better size control for images and
+// other multimedia. Also, I'm not willing to give
+// up that much control to brainless browsers.
+// Alternatively, I'm just not smart enough to think
+// in flexible grids. If you are, feel free to edit
+// the column mixins in _base.scss and please share.
+//---------------------------------------------------
+
+body, select, input, textarea {
+  color: $font-color;
+  // Set your base font here, to apply evenly
+  // font-family: Georgia, serif;
+}
+
+//-----------------------------------
+// Basic layout
+//-----------------------------------
+
+body > * {
+	margin: 0 auto;
+	width: 20em;	
+	
+	@include four-column;
+} 
+
+header:after, section:after, footer:after { content: " "; clear: both; display: block; }
+
+/* Masthead */
+
+header[role=banner] {
+
+	#registry-masthead {
+		a { text-decoration: none; }
+		a:visited { color: $blue; }
+		a:focus, a:hover { color: $light-blue; }
+
+		h1 {
+			@include one-column;
+
+			float: left;
+			@include ms-margin-bottom;
+			@include ms-margin-top;
+
+			padding: 0;
+			@include ms-3;
+		}
+		
+		> nav {
+			li { float: left; @include gutter-right; 
+				mark a { text-decoration: underline; font-style: normal; color: $blue; background: $white; }
+			}
+		}
+		
+		nav#banner-nav {
+			@include three-column;
+			float: right;
+			margin-top: $ms-base-px * 2;
+			margin-top: $ms-base-rem * 2;
+			@include ms-base;
+			
+			ul { float: right; }
+			
+			li.upload:hover, li.upload:focus {
+				padding: 0;
+				padding-left: $ms-line-height-px-48;
+				padding-left: $ms-line-height-rem-48;
+
+				background:url('../images/upload.png') left center no-repeat;
+			}
+			li.upload mark { background: $white; }
+			
+			label {
+				margin-right: 8px;
+				margin-right: .5rem;
+				color: $blue;
+				font-weight: normal;
+				@include ms-base;
+			}
+
+			[role=search] { 
+				float: right;
+			
+				input[type=search] { margin-right: 8px; margin-right: .5rem; }
+				input[type=submit] { 
+					margin-left: $ms-small-px;	// replaces _overrides.scss line 182
+					margin-left: $ms-small-rem;
+					padding: 2px 7px;
+					padding: .132rem .444rem;
+					@include ms-base;
+					background: $blue;
+
+				}
+				input[type=submit]:hover, input[type=submit]:focus { background: $light-blue; }
+			}
+
+		}
+		
+		nav { font-size: 18px; font-size: 1.25rem; margin-top: $ms-line-height-px-48; margin-top: $ms-line-height-rem-48; }
+		
+		nav#registry-nav { float: left; clear: both; font-size: $ms-line-height-px-48; font-size: $ms-line-height-rem-48; }
+	}
+}
+
+/* role=main */
+section[role=main] {
+
+	header.current-artist {
+		color: $gray;
+		
+		img {
+			width: $ms-4-px;
+			width: $ms-4-rem;
+			float: left;
+			@include gutter-right;
+		}
+		
+		h1 {
+			@include ms-2;
+			margin-bottom: 0;
+		}
+		
+		ul {
+			list-style: none;
+			margin: 0;
+			
+			li {
+				float: left;
+				@include gutter-right;
+			}
+		}
+		
+		ul.registry-artist-social {
+			float: right;
+			
+			li {
+				margin: -12px 0 0 8px;
+				margin: -.75rem 0 0 .5rem;
+				opacity: .75;
+				
+				@include transition($opacity-transition);
+				/*
+					header.current-artist ul.registry-artist-social li {
+					
+						-webkit-transition: opacity 0.3s ease;
+						-moz-transition: opacity 0.3s ease;
+						-o-transition: opacity 0.3s ease;
+						transition: opacity 0.3s ease;
+				}*/
+			}
+			
+			li:hover, li:focus { opacity: 100; }
+			
+			img {	// need to fix for responsive design
+				width: $ms-line-height-px-48 * 2;
+				width: $ms-line-height-rem-48 * 2;
+				height: $ms-line-height-px-48 * 2;
+				height: $ms-line-height-rem-48 * 2;
+			}
+			
+		}
+		
+	}
+	
+	.text {
+		@include three-column;
+		float: left;
+	}
+
+	section {
+		header { // need to fix for responsive design
+			margin: $ms-line-height-px-48*2 0 $ms-line-height-rem-48*2;
+			
+			@media screen and (min-width: 48em) { 
+				h1 { 
+					width: $three-column-px-48; 
+					width: $three-column-rem-48;
+					float: left;
+					margin: 0;
+				}
+			}
+			@media screen and (min-width: 60em) { h1 { width: $three-column-px-60; width: $three-column-rem-60; }}
+			
+			div {
+				@include one-column;
+				float: right;
+				@include ms-margin-top;
+			}
+		}
+		
+		img {
+	    	width: 174px;
+	    	width: 10.875rem;
+	    	float: left;
+
+	    	padding: $ms-line-height-px-48;
+	    	padding: $ms-line-height-rem-48;
+	    
+	    	@include ms-margin-bottom;
+
+	    	background: #f6f6f6;
+	    	border: 5.6px solid $gray; //5.6px
+	    	border: .35rem solid $gray; //.35rem
+
+	    }
+	
+	}
+}
+
+
+
+*[role=complimentary] {
+	@include one-column;
+	float: right;
+	clear: right;
+}
+
+body > footer {
+	margin-top: $ms-line-height-px-48 * 2;
+	margin-top: $ms-line-height-rem-48 * 2;
+}
+
+/* =============================================================================
+   Widgets
+   ========================================================================== */
+
+/* Miscellaneous */
+li.phone	{ padding: 0 0 0 $ms-line-height-px-48; padding: 0 0 0 $ms-line-height-rem-48; background:url('../images/phone.png') no-repeat left center; }
+li.website	{ padding: 0 0 0 $ms-line-height-px-48; padding: 0 0 0 $ms-line-height-rem-48; background:url('../images/globe.png') no-repeat left center; }
+
+/* Gallery */
+.registry-gallery {
+	@include three-column;
+	@include ms-margin-top;
+	clear: left;
+	margin: $ms-line-height-px-48 0 0;
+	margin: $ms-line-height-px-48 0 0;
+	overflow-x: hidden;
+}
+
+.registry-gallery-full {
+	@include four-column;
+	clear: left;
+	margin: $ms-line-height-px-48 0 0;
+	margin: $ms-line-height-px-48 0 0;
+	overflow-x: hidden;
+}
+
+.registry-gallery ul, .registry-gallery-full ul { list-style: none; }
+
+.registry-gallery li, .registry-gallery-full li {
+	@include one-column;
+	float: left;
+	margin: 0 $ms-line-height-px-48 $ms-base-px 0;
+	margin: 0 $ms-line-height-rem-48 $ms-base-rem 0;
+	border: 5px;
+	border: .35rem solid $light-gray;
+	position: relative;
+	background: #f6f6f6;
+}
+
+.registry-gallery li img, .registry-gallery-full li img { // Need to fix responsive
+	width: 174px;
+	width: 10.875rem;
+	height: $ms-line-height-px-48 * 6;
+	height: $ms-line-height-rem-48 * 6;
+	position: relative;
+	display: block;
+	
+	margin: $ms-base-px auto;
+	margin: $ms-base-rem auto;
+	z-index: 0;
+}
+
+	.registry-gallery ul li:nth-child(3n), .registry-gallery-full ul li:nth-child(4n) { margin-right: 0; }
+
+.registry-gallery li div, .registry-gallery-full li div { 
+	width: 174px;
+	width: 10.875rem;
+	height: 144px;
+	height: 9rem;
+	position: absolute;
+	top: 16px;
+	top: 1rem;
+	left: 19px;
+	left: 1.2rem;
+	z-index: 1;
+	background: transparent;
+	
+	-webkit-transition: background 0.3s ease;
+	-moz-transition: background 0.3s ease;
+	-o-transition: background 0.3s ease;
+	transition: background 0.3s ease;
+}
+
+.registry-gallery li div:hover, .registry-gallery li div:focus, .registry-gallery-full li div:hover, .registry-gallery-full li div:focus { background: rgba(255,255,255,.9); }
+.registry-gallery li div a, .registry-gallery-full li div a { width: 100%; height: 100%; }
+.registry-gallery li div h1, .registry-gallery-full div h1 { 
+	margin: $ms-small-px;
+	margin: $ms-small-rem;
+	@include ms-small;
+}
+
+.registry-gallery li div *, .registry-gallery-full li div * { display: none; }
+
+	.registry-gallery li div:hover *, .registry-gallery li div:focus *, .registry-gallery-full li div:hover *, .registry-gallery-full li div:focus * { display: block; }
+
+.registry-gallery nav.pagination, .registry-gallery nav.pagination ul { clear: both; @include three-column; }
+.registry-gallery-full nav.pagination, .registry-gallery-full nav.pagination ul { clear:both; @include four-column; }
+.registry-gallery nav.pagination li, .registry-gallery-full nav.pagination li { border: none; background: $white; margin: 0; width: auto; }
+.registry-gallery nav.pagination li.newer, .registry-gallery-full nav.pagination li.newer { float: right; }
+.registry-gallery nav.pagination li.older, .registry-gallery-full nav.pagination li:older { float: left; }
+
+/* Artwork Upload */
+.registry-upload { // Need to fix for responsive design
+	width: 408px;
+	width: 25.55rem;
+	margin-left: 246px;
+	margin-left: 15.375rem;
+	padding: 8px $ms-line-height-px-48;
+	padding: .5rem $ms-line-height-rem-48;	
+	border: 5px;
+	border: .35rem solid $light-gray;
+	background: #f6f6f6;
+	
+	label { margin-top: 0; }
+	input[type=submit] { float: right; }
+
+}
+
+.edit-artwork-upload {
+	@include one-column;
+	float: right;
+
+}
+
+.edit-artwork {
+	clear:both;
+}
+
+/* Sign in, registration, and account */
+
+/* Sign in */
+.registry-sign-in {
+	@include two-column;
+	float: left;
+
+}
+.registry-sign-up {
+	@include two-column;
+	float: right;
+}
+
+/* First Time */
+.registry-first-time-nav, .registry-edit-account-nav { 
+	width: 100%;
+	clear: both;
+	float: left;
+	margin: $ms-line-height-px-48 0 32px;
+	margin: $ms-line-height-rem-48 0 3rem;
+	padding: 4px;
+	padding: .25rem; 
+	@include ms-1;
+	border-top: 2px;
+	border-top: .125rem solid $light-gray;
+	border-bottom: 2px;
+	border-bottom: .125rem solid $light-gray;
+}
+.registry-first-time-nav a, .registry-edit-account-nav a { 
+	width: 100%;
+	text-decoration: none; 
+	color: #9cf;
+}
+
+.registry-first-time-nav a:hover, .registry-first-time-nav a:focus, .registry-edit-account-nav a:hover, .registry-edit-account-nav a:focus { text-decoration: underline; color: #369; }
+
+.registry-first-time-nav ul, .registry-edit-account-nav ul { list-style: none; }
+.registry-first-time-nav li { 
+	float: left;
+	margin-right: 6px;
+	margin-right: .375rem;
+}
+
+ .registry-edit-account-nav li {
+ 	float: left;
+ 	margin-right: $ms-line-height-px-48;
+ 	margin-right: $ms-line-height-rem-48;
+ }
+.registry-first-time-nav li:before {
+	content: "\2192 ";
+	padding-right: 6px;
+	padding-right: .375rem;
+	color: #ccc;
+}
+
+.registry-first-time-nav li mark, .registry-edit-account-nav li mark { 
+	width: 100%;
+	color: $blue; 
+}
+
+.registry-first-time-nav li.registry-step-complete:before {	color: $light-blue; }
+.registry-step-complete a { color: $blue; }
+.registry-step-complete a:hover, .registry-step-complete a:focus { color: $light-blue; }
+
+form.form-upload-avatar {
+	width: 100%;
+	clear: both;
+}
+
+form.form-upload-avatar img {
+	width: 174px;
+	width: 10.875rem;
+	height: $ms-line-height-px-48 * 6;
+	height: $ms-line-height-rem-48 * 6;
+	float: left;
+	margin-right: $ms-line-height-px-48;
+	margin-right: $ms-line-height-rem-48;
+	padding: 22px;
+	padding: 1.4rem;
+	position: relative;
+	display: block;
+	border: 5px;
+	border: .35rem solid $light-gray;
+}
+
+.edit-account ul {
+	float: right;
+	@include one-column;
+	list-style: none;
+}
+
+.edit-account fieldset {
+	float: left;
+	@include three-column;
+}
+
+.edit-account fieldset legend {
+	padding-bottom: $ms-line-height-px-48;
+	padding-bottom: $ms-line-height-rem-48;
+	@include ms-3;
+}
+
+.edit-account fieldset input[type=password] { // Need to fix for responsive design
+	width: 408px;
+	width: 25.55rem;
+}
+
+.edit-account fieldset input:after {
+	display: block;
+	content: " ";
+	float: left;
+	clear:both;
+}
+
+.edit-account .button {
+	float: right;
+	clear: right;
+}
+
+.choose {
+	clear: both;
+	float: right;
+	margin: $ms-line-height-px-48 * 2 0;
+	margin: $ms-line-height-rem-48 * 2 0;
+}
+
+.choose:after {
+	content: " ";
+	display: block;
+	clear:both;
+}
+
+.kill {
+	@include one-column;
+	margin: $ms-line-height-px-48 0;
+	margin: $ms-line-height-rem-48 0;
+	padding: 8px;
+	padding: .5rem;
+	border: none;
+	color: $white;
+	@include ms-1;
+	font-weight: bold;
+	
+	background-color: $red;
+
+	@include buttonification;
+}
+
+.kill:hover, .kill:focus { background-color: $light-red; }
+
+.go {
+	@include one-column;
+	margin: $ms-line-height-px-48 0;
+	margin: $ms-line-height-rem-48 0;
+	padding: 8px;
+	padding: .5rem;
+	border: none;
+	color: $white;
+	font-size: $ms-line-height-px-48;
+	font-size: $ms-line-height-rem-48;
+	font-weight: bold;
+	
+	background-color: $blue;
+
+	@include buttonification;
+}
+
+.go:hover, .go:focus { background-color: $light-blue; }
+
+a.go { display: block; @include one-column; text-align: center; text-decoration: none; }
+a.go:hover, a.go:focus { color: $white; }
+
+/* Announcements */
+section.announcement {
+	margin: $ms-line-height-px-48 0;
+	margin: $ms-line-height-rem-48 0;
+}
+
+section[role=main] section.announcement {
+	border-bottom: 2px;
+	border-bottom: .125rem solid $light-gray;
+}
+
+section[role=main] section.announcement header {
+	@include one-column;
+	margin: 0;
+	float: left;
+}
+
+section[role=main] section.announcement header h1 {
+	@include ms-1;
+	font-weight: normal;
+	margin: 0;
+}
+
+section[role=main] section.announcement img { // Need to fix for responsive design
+	width: 162px;
+	width: 10.175rem;
+	margin: 0; 
+
+}
+
+section[role=main] section.announcement img+p { text-indent: 0; margin: 0; }
+
+section[role=main] section.announcement div {
+	@include three-column;
+	margin-left: $ms-line-height-px-48;
+	margin-left: $ms-line-height-rem-48;
+	float: left;
+	clear: none; 
+}
+
+section[role=main] section.announcement div h1 { font-size: $ms-line-height-px-48; font-size: $ms-line-height-rem-48; }
+
+
+/* Feedback */
+.feedback-button {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background: rgba(50,50,50,.95);
+}
+
+.feedback-button > a {
+	display: block;
+	padding: 4px 8px;
+	padding: .25rem .5rem;
+	color: $white;
+}
+
+.feedback-button > a:hover, .feedback-button > a:focus { color: $light-blue; }
+
+/*	Page Specific styles */
+#artist_page {
+	.contact-artist {
+		@include one-column;
+		float: right;
+		clear: both;
+		@include ms-margin-top;
+		@include ms-margin-bottom;
+	}
+
+	section[role=main] {
+		@include three-column;
+		float: left;
+	}
+}
+
+
+#announcements_page section[role=complimentary] {
+	width: 100%;
+	float: left;
+}
+
+#sign-in_page {
+	section[role=main] form {
+		label { display: block; }
+		input[type=text], input[type=password], input[type=email] { width: 75%; }
+	}
+}
