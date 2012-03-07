@@ -16,12 +16,11 @@ window.log = function(){
 
 // Sets window properties as cookies for server-side optimizations
 $(window).resize(function () {
-var viewportWidth  = document.documentElement.clientWidth || $(window).width()
-  , viewportHeight = document.documentElement.clientHeight || $(window).height()
+var viewportWidth  = document.documentElement.clientWidth || $(window).width(),
+	viewportHeight = document.documentElement.clientHeight || $(window).height()
 
 	document.cookie = "screen-height=" + viewportHeight + "; path=/";
 	document.cookie = "screen-width=" + viewportWidth + "; path=/";
-	document.cookie = "screen-orientation" + window.orientation + ";path=/";
 });
 
 
