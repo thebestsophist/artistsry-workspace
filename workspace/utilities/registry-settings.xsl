@@ -375,17 +375,7 @@
 			</textarea>
 
 		<!-- Publish? -->
-			<xsl:choose>
-				<xsl:when test="$current-page = 'new'">
-					<input type="hidden" name="fields[publish]" value="yes"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<label for="registry-publish" class="checkbox">
-						<xsl:text>Would you like to publish this picture immediately?</xsl:text>
-					</label>
-					<input id="registry-publish" type="checkbox" name="fields[publish]"/>
-				</xsl:otherwise>
-			</xsl:choose>
+			<input type="hidden" name="fields[publish]" value="yes"/>
 		<!-- Tasty hidden fields -->
 			<input name="id" type="hidden">
 				<xsl:attribute name="value">
