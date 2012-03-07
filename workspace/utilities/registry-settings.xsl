@@ -361,7 +361,7 @@
 			</textarea>
 		<!-- Tags -->
 			<label for="registry-upload-tags">Add tags (Separate tags with commas)</label>
-			<input id="registry-upload-tags" name="fields[artwork-tags]" type="text" placeholder="(e.g. oil on canvas, sculpture, painting, Impressionist)">
+			<textarea id="registry-upload-tags" name="fields[artwork-tags]" type="text" placeholder="(e.g. oil on canvas, sculpture, painting, Impressionist)">
 			    <xsl:attribute name="value">
 			    	<xsl:choose>
 			    		<xsl:when test="$current-page = 'new'">
@@ -372,7 +372,7 @@
 						</xsl:otherwise>
 					</xsl:choose>
 			    </xsl:attribute>
-			</input>
+			</textarea>
 
 		<!-- Publish? -->
 			<xsl:choose>
