@@ -31,10 +31,10 @@
 							<xsl:value-of select="$root"/>
 							<xsl:text>/image/1/</xsl:text>
 							<xsl:choose>
-								<xsl:when test="$screen-width &gt; 959">	<!-- Modern desktop -->
+								<xsl:when test="$window-width &gt; 959">	<!-- Modern desktop -->
 									<xsl:text>960</xsl:text>	<!-- Set this to the maximum size of your element at this media query-->
 								</xsl:when>
-								<xsl:when test="$screen-width &lt; 960 and $screen-width &gt; 480">	<!-- small desktop/handheld -->
+								<xsl:when test="$window-width &lt; 960 and $window-width &gt; 480">	<!-- small desktop/handheld -->
 									<xsl:text>768</xsl:text>
 								</xsl:when>
 								<xsl:otherwise>
