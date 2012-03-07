@@ -194,8 +194,15 @@ section[role=main] {
 		}
 		
 		img {
-	    	width: 174px;
-	    	width: 10.875rem;
+			@media screen and (min-width: 768px) {
+				width: $one-column-px-48 - 48px;
+				width: $one-column-rem-48 - 3rem;
+			}
+			
+			@media screen and (min-width: 960px) {
+				width: $one-column-px-60 - 48px;
+				width: $one-column-rem-60 - 3rem;
+			}
 	    	float: left;
 
 	    	padding: $ms-line-height-px-48;
@@ -265,8 +272,15 @@ li.website	{ padding: 0 0 0 $ms-line-height-px-48; padding: 0 0 0 $ms-line-heigh
 }
 
 .registry-gallery li img, .registry-gallery-full li img { // Need to fix responsive
-	width: 174px;
-	width: 10.875rem;
+	@media screen and (min-width: 768px) {
+	    width: $one-column-px-48 - 48px;
+	    width: $one-column-rem-48 - 3rem;
+	}
+	
+	@media screen and (min-width: 960px) {
+	    width: $one-column-px-60 - 48px;
+	    width: $one-column-rem-60 - 3rem;
+	}
 	height: $ms-line-height-px-48 * 6;
 	height: $ms-line-height-rem-48 * 6;
 	position: relative;
@@ -280,22 +294,28 @@ li.website	{ padding: 0 0 0 $ms-line-height-px-48; padding: 0 0 0 $ms-line-heigh
 	.registry-gallery ul li:nth-child(3n), .registry-gallery-full ul li:nth-child(4n) { margin-right: 0; }
 
 .registry-gallery li div, .registry-gallery-full li div { 
-	width: 174px;
-	width: 10.875rem;
-	height: 144px;
-	height: 9rem;
+
+	@media screen and (min-width: 768px) {
+	    width: $one-column-px-48 - 48px;
+	    width: $one-column-rem-48 - 3rem;
+	}
+	
+	@media screen and (min-width: 960px) {
+	    width: $one-column-px-60 - 48px;
+	    width: $one-column-rem-60 - 3rem;
+	}
+
+	height: $ms-line-height-px-48 * 6;
+	height: $ms-line-height-rem-48 * 6;
 	position: absolute;
-	top: 16px;
-	top: 1rem;
+	top: $ms-base-px;
+	top: $ms-base-rem;
 	left: 19px;
 	left: 1.2rem;
 	z-index: 1;
 	background: transparent;
 	
-	-webkit-transition: background 0.3s ease;
-	-moz-transition: background 0.3s ease;
-	-o-transition: background 0.3s ease;
-	transition: background 0.3s ease;
+	@include transition($background-transition);
 }
 
 .registry-gallery li div:hover, .registry-gallery li div:focus, .registry-gallery-full li div:hover, .registry-gallery-full li div:focus { background: rgba(255,255,255,.9); }
@@ -318,10 +338,21 @@ li.website	{ padding: 0 0 0 $ms-line-height-px-48; padding: 0 0 0 $ms-line-heigh
 
 /* Artwork Upload */
 .registry-upload { // Need to fix for responsive design
-	width: 408px;
-	width: 25.55rem;
-	margin-left: 246px;
-	margin-left: 15.375rem;
+	@include two-column;
+//	width: 408px;
+//	width: 25.55rem;
+	@media screen and (min-width: 768px) {
+		margin-left: $one-column-px-48;
+		margin-left: $one-column-rem-48;	
+	}
+	
+	@media screen and (min-width: 960px) {
+		margin-left: $one-column-px-60;
+		margin-left: $one-column-rem-60;
+	}
+//	margin-left: 246px;
+//	margin-left: 15.375rem;
+
 	padding: 8px $ms-line-height-px-48;
 	padding: .5rem $ms-line-height-rem-48;	
 	border: 5px;
@@ -395,7 +426,7 @@ li.website	{ padding: 0 0 0 $ms-line-height-px-48; padding: 0 0 0 $ms-line-heigh
 	content: "\2192 ";
 	padding-right: 6px;
 	padding-right: .375rem;
-	color: #ccc;
+	color: $light-grey;
 }
 
 .registry-first-time-nav li mark, .registry-edit-account-nav li mark { 
@@ -413,8 +444,17 @@ form.form-upload-avatar {
 }
 
 form.form-upload-avatar img {
-	width: 174px;
-	width: 10.875rem;
+
+	@media screen and (min-width: 768px) {
+	    width: $one-column-px-48 - 48px;
+	    width: $one-column-rem-48 - 3rem;
+	}
+	
+	@media screen and (min-width: 960px) {
+	    width: $one-column-px-60 - 48px;
+	    width: $one-column-rem-60 - 3rem;
+	}
+
 	height: $ms-line-height-px-48 * 6;
 	height: $ms-line-height-rem-48 * 6;
 	float: left;
@@ -542,7 +582,6 @@ section[role=main] section.announcement img { // Need to fix for responsive desi
 	width: 162px;
 	width: 10.175rem;
 	margin: 0; 
-
 }
 
 section[role=main] section.announcement img+p { text-indent: 0; margin: 0; }
@@ -590,7 +629,6 @@ section[role=main] section.announcement div h1 { font-size: $ms-line-height-px-4
 		float: left;
 	}
 }
-
 
 #announcements_page section[role=complimentary] {
 	width: 100%;
