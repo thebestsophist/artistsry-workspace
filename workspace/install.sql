@@ -40,12 +40,11 @@ CREATE TABLE `tbl_fields_checkbox` (
   `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_fields_checkbox` ***
-INSERT INTO `tbl_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (21, 48, 'on', 'Do you wish to allow open registration?');
-INSERT INTO `tbl_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (23, 52, 'on', 'Show number of views for artwork?');
-INSERT INTO `tbl_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (22, 49, 'on', 'Do you want to enable media queries? (For smaller screens, mobile is currently unsupported.)');
+INSERT INTO `tbl_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (49, 48, 'off', 'Do you wish to allow open registration?');
+INSERT INTO `tbl_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (50, 52, 'off', 'Show number of views for artwork?');
 INSERT INTO `tbl_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (48, 57, 'off', NULL);
 INSERT INTO `tbl_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (46, 90, 'off', 'Has this been responded to?');
 
@@ -64,17 +63,6 @@ INSERT INTO `tbl_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (34, 81,
 INSERT INTO `tbl_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (35, 72, 'yes');
 INSERT INTO `tbl_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (37, 42, 'yes');
 INSERT INTO `tbl_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (30, 87, 'yes');
-
--- *** STRUCTURE: `tbl_fields_entry_versions` ***
-DROP TABLE IF EXISTS `tbl_fields_entry_versions`;
-CREATE TABLE `tbl_fields_entry_versions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `field_id` int(11) NOT NULL,
-  `show_in_publish` enum('yes','no') DEFAULT 'no',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- *** DATA: `tbl_fields_entry_versions` ***
 
 -- *** STRUCTURE: `tbl_fields_filter` ***
 DROP TABLE IF EXISTS `tbl_fields_filter`;
@@ -130,7 +118,7 @@ CREATE TABLE `tbl_fields_input` (
   `validator` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=224 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=225 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_fields_input` ***
 INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (221, 37, NULL);
@@ -141,7 +129,7 @@ INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (218, 34, 
 INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (215, 32, NULL);
 INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (216, 92, NULL);
 INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (214, 31, NULL);
-INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (89, 56, '/^[^\\s:\\/?#]+:(?:\\/{2,3})?[^\\s.\\/?#]+(?:\\.[^\\s.\\/?#]+)*(?:\\/[^\\s?#]*\\??[^\\s?#]*(#[^\\s#]*)?)?$/');
+INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (224, 56, '/^[^\\s:\\/?#]+:(?:\\/{2,3})?[^\\s.\\/?#]+(?:\\.[^\\s.\\/?#]+)*(?:\\/[^\\s?#]*\\??[^\\s?#]*(#[^\\s#]*)?)?$/');
 INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (213, 28, NULL);
 INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (222, 38, NULL);
 INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (223, 40, NULL);
@@ -332,20 +320,21 @@ CREATE TABLE `tbl_fields_textarea` (
   `size` int(3) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_fields_textarea` ***
 INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (12, 51, 'markdown_with_purifier', 15);
-INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (27, 47, 'markdown_with_purifier', 15);
+INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (84, 47, 'markdown_with_purifier', 15);
 INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (83, 44, 'markdown', 15);
 INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (82, 29, 'markdown', 15);
-INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (48, 62, 'markdown_with_purifier', 15);
-INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (49, 64, NULL, 15);
+INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (87, 62, 'markdown_with_purifier', 15);
 INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (77, 73, NULL, 15);
 INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (78, 74, NULL, 15);
 INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (79, 77, NULL, 15);
 INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (68, 84, NULL, 15);
 INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (76, 80, 'markdown', 15);
+INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (88, 64, 'markdown', 15);
+INSERT INTO `tbl_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (89, 93, 'markdown', 15);
 
 -- *** STRUCTURE: `tbl_fields_uniqueupload` ***
 DROP TABLE IF EXISTS `tbl_fields_uniqueupload`;
@@ -699,20 +688,6 @@ CREATE TABLE `tbl_entries_data_48` (
 
 -- *** DATA: `tbl_entries_data_48` ***
 INSERT INTO `tbl_entries_data_48` (`id`, `entry_id`, `value`) VALUES (4, 16, 'no');
-
--- *** STRUCTURE: `tbl_entries_data_49` ***
-DROP TABLE IF EXISTS `tbl_entries_data_49`;
-CREATE TABLE `tbl_entries_data_49` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `value` enum('yes','no') NOT NULL DEFAULT 'yes',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `entry_id` (`entry_id`),
-  KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-
--- *** DATA: `tbl_entries_data_49` ***
-INSERT INTO `tbl_entries_data_49` (`id`, `entry_id`, `value`) VALUES (4, 16, 'yes');
 
 -- *** STRUCTURE: `tbl_entries_data_50` ***
 DROP TABLE IF EXISTS `tbl_entries_data_50`;
@@ -1242,6 +1217,20 @@ CREATE TABLE `tbl_entries_data_92` (
 
 -- *** DATA: `tbl_entries_data_92` ***
 
+-- *** STRUCTURE: `tbl_entries_data_93` ***
+DROP TABLE IF EXISTS `tbl_entries_data_93`;
+CREATE TABLE `tbl_entries_data_93` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `entry_id` int(11) unsigned NOT NULL,
+  `value` mediumtext,
+  `value_formatted` mediumtext,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `entry_id` (`entry_id`),
+  FULLTEXT KEY `value` (`value`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- *** DATA: `tbl_entries_data_93` ***
+
 -- *** DATA: `tbl_canofspam_tracking` ***
 INSERT INTO `tbl_canofspam_tracking` (`id`, `client`, `form`) VALUES (339, 'ce18af60a37e80d60a47e04bf79bae78', '8639e89c35fba9cff10cc4265d4a0832');
 INSERT INTO `tbl_canofspam_tracking` (`id`, `client`, `form`) VALUES (340, '85654783dd877bff6ea9eef8b35bb3d2', 'a81eb94df9f0e886ea02019f6f46562f');
@@ -1392,7 +1381,6 @@ INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (135, 'm
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (136, 'xssfilter', 'enabled', 1.1);
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (137, 'custompreferences', 'enabled', '0.2.2.2');
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (138, 'documenter', 'enabled', '1.0RC1');
-INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (139, 'entry_versions', 'enabled', '0.4.1');
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (140, 'bilinkfield', 'enabled', '1.1.1');
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (141, 'members', 'enabled', '1.1.1');
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (142, 'publish_tabs', 'enabled', '1.0.1');
@@ -1409,6 +1397,7 @@ INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (152, 'i
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (153, 'filterfield', 'enabled', 1.1);
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (154, 'oembed_field', 'enabled', '1.3.1');
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (155, 'emailtemplatefilter', 'enabled', '1.1.0');
+INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (157, 'screen_detection', 'enabled', '2012.03.01');
 
 -- *** DATA: `tbl_extensions_delegates` ***
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (186, 129, '/frontend/', 'ManipulateDevKitNavigation', 'manipulateDevKitNavigation');
@@ -1433,11 +1422,6 @@ INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (198, 138, '/system/preferences/', 'Save', '__SavePreferences');
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (199, 138, '/backend/', 'InitaliseAdminPageHead', 'loadAssets');
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (200, 138, '/backend/', 'AppendElementBelowView', 'appendDocs');
-INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (201, 139, '/backend/', 'InitaliseAdminPageHead', 'initializeAdmin');
-INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (202, 139, '/publish/new/', 'EntryPostCreate', 'saveVersion');
-INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (203, 139, '/publish/edit/', 'EntryPostEdit', 'saveVersion');
-INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (204, 139, '/publish/edit/', 'EntryPreRender', 'renderVersion');
-INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (205, 139, '/frontend/', 'EventPostSaveFilter', 'saveVersion');
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (206, 141, '/frontend/', 'FrontendPageResolved', 'checkFrontendPagePermissions');
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (207, 141, '/frontend/', 'FrontendParamsResolve', 'addMemberDetailsToPageParams');
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (208, 141, '/frontend/', 'FrontendProcessEvents', 'appendLoginStatusToEventXML');
@@ -1483,6 +1467,7 @@ INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (249, 155, '/frontend/', 'EventFinalSaveFilter', 'eventFinalSaveFilter');
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (250, 155, '/frontend/', 'FrontendPageResolved', 'setPage');
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (251, 155, '/frontend/', 'FrontendParamsResolve', 'setParams');
+INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (255, 157, '/frontend/', 'FrontendParamsResolve', 'addParam');
 
 -- *** DATA: `tbl_fields` ***
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (36, 'Flickr', 'flickr', 'input', 7, 'no', 16, 'sidebar', 'no');
@@ -1510,13 +1495,13 @@ INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (91, 'Artist', 'artist', 'selectbox_link', 8, 'yes', 7, 'main', 'no');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (47, 'Sign up text', 'sign-up-text', 'textarea', 9, 'no', 0, 'main', 'no');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (48, 'open registration', 'open-registration', 'checkbox', 9, 'no', 1, 'sidebar', 'yes');
-INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (49, 'Media queries', 'media-queries', 'checkbox', 9, 'no', 2, 'sidebar', 'yes');
+INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (93, 'Code of Conduct', 'code-of-conduct', 'textarea', 11, 'no', 2, 'main', 'no');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (50, 'Title', 'title', 'input', 10, 'yes', 0, 'main', 'yes');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (51, 'Description', 'description', 'textarea', 10, 'no', 1, 'main', 'no');
-INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (52, 'Counter', 'counter', 'checkbox', 9, 'no', 3, 'sidebar', 'yes');
+INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (52, 'Counter', 'counter', 'checkbox', 9, 'no', 2, 'sidebar', 'yes');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (53, 'Interests', 'interests', 'selectbox_link', 7, 'no', 7, 'sidebar', 'no');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (58, 'Artwork', 'artwork', 'image_upload', 8, 'no', 1, 'main', 'yes');
-INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (56, 'Registry URL', 'registry-url', 'input', 9, 'no', 4, 'main', 'yes');
+INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (56, 'Registry URL', 'registry-url', 'input', 9, 'no', 3, 'main', 'yes');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (57, 'Publish', 'publish', 'checkbox', 8, 'no', 8, 'sidebar', 'yes');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (62, 'Copyright Notice', 'copyright-notice', 'textarea', 11, 'no', 0, 'main', 'no');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (78, 'Title', 'title', 'input', 15, 'no', 0, 'main', 'yes');
@@ -1643,6 +1628,9 @@ INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `d
 INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (97, 82, 'Messages', 'messages', 'account', 'message-id', 'registry_logged_in_artist,registry_logged_in_artist_messages,registry_settings', 'login,send_feedback', 24);
 INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (98, 82, 'Edit your account', 'edit', 'account', NULL, 'registry_edit_current_artist,registry_interest_list,registry_logged_in_artist,registry_settings', 'edit_account,login,send_feedback', 25);
 INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (99, 82, 'Change your profile picture', 'photo', 'account', NULL, 'registry_edit_current_artist,registry_logged_in_artist,registry_settings', 'edit_account,login,send_feedback', 26);
+INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (100, NULL, 'Privacy', 'privacy', NULL, NULL, 'registry_legalese,registry_logged_in_artist,registry_settings', 'login', 27);
+INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (101, NULL, 'Copyright', 'copyright', NULL, NULL, 'registry_legalese,registry_logged_in_artist,registry_settings', 'login,send_feedback', 28);
+INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (102, NULL, 'Conduct', 'conduct', NULL, NULL, 'registry_legalese,registry_logged_in_artist,registry_settings', 'login,send_feedback', 29);
 
 -- *** DATA: `tbl_pages_types` ***
 INSERT INTO `tbl_pages_types` (`id`, `page_id`, `type`) VALUES (697, 76, 'hidden');
