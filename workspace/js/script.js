@@ -8,6 +8,21 @@
 
 */
 
+$(document).ready(function() {
+
+$(".edit-account").tabs({ fx: { opacity: 'toggle' } });
+$(".announcements").tabs({ fx: { opacity: 'toggle' } });
+
+
+/* Feedback */
+	$(".feedback-button a").fancybox();
+
+/* MarkItUp for textareas */
+	$("form textarea").markItUp(mySettings);
+
+
+});
+
 /* Only < 48em */
 if (Modernizr.mq('only screen and (max-width: 767px)')) {
 
