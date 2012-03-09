@@ -143,7 +143,7 @@
 								<xsl:value-of select="$root"/>
 							</xsl:when>
 							<xsl:otherwise>
-								<xsl:avlue-of select="$ds-registry-url"/>
+								<xsl:value-of select="$ds-registry-url"/>
 							</xsl:otherwise>
 						</xsl:choose>
 						<xsl:text>/copyright</xsl:text>
