@@ -148,7 +148,7 @@
 						</xsl:choose>
 						<xsl:text>/copyright</xsl:text>
     				</xsl:attribute>
-    				Copyright
+    				<xsl:text>Copyright</xsl:text>
 	    		</a>
 				<xsl:text> and </xsl:text>
 	    		<a>
@@ -163,13 +163,13 @@
 	    				</xsl:choose>
 	    				<xsl:text>/privacy</xsl:text>
 	    			</xsl:attribute>
-	    			privacy
+	    			<xsl:text>privacy</xsl:text>
 	    		</a>
-	    		policies.
+				<xsl:text> policies.</xsl:text>
 	    	</p>
     	</div>
 		<div>
-			<p>Artists&#8217;ry, the open-source artists&#8217; registry is designed by <a href="http://enguindesign.com">Enguin Design</a> and built with <a href="http://symphony-cms.com/">Symphony CMS</a>.</p>
+			<p>Artists&#8217;ry, the open-source artists&#8217; registry. Designed by <a href="http://enguindesign.com">Enguin Design</a> and built with <a href="http://symphony-cms.com/">Symphony CMS</a>.</p>
 		</div>
 		
 		
