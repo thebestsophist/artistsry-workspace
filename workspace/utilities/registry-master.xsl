@@ -134,7 +134,45 @@
 -->
 
     <footer>
-		<h1>Tasty footer stuffs</h1>
+    	<div role="contentinfo">
+    		<p>
+    			<a>
+    				<xsl:attribute name="href">
+						<xsl:choose>
+							<xsl:when test="$ds-registry-url = ''">
+								<xsl:value-of select="$root"/>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:avlue-of select="$ds-registry-url"/>
+							</xsl:otherwise>
+						</xsl:choose>
+						<xsl:text>/copyright</xsl:text>
+    				</xsl:attribute>
+    				Copyright
+	    		</a>
+				<xsl:text> and </xsl:text>
+	    		<a>
+	    			<xsl:attribute name="href">
+	    				<xsl:choose>
+							<xsl:when test="$ds-registry-url = ''">
+								<xsl:value-of select="$root"/>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:avlue-of select="$ds-registry-url"/>
+							</xsl:otherwise>
+	    				</xsl:choose>
+	    				<xsl:text>/privacy</xsl:text>
+	    			</xsl:attribute>
+	    			privacy
+	    		</a>
+	    		policies.
+	    	</p>
+    	</div>
+		<div>
+			<p>Artists&#8217;ry, the open-source artists&#8217; registry is designed by <a href="http://enguindesign.com">Enguin Design</a> and built with <a href="http://symphony-cms.com/">Symphony CMS</a>.</p>
+		</div>
+		
+		
 		<xsl:if test="//@result = 'error'">
 			<h2>Debug</h2>
 			<textarea readonly="readonly">
@@ -196,9 +234,10 @@
 
 		google.setOnLoadCallback(function() {
 			WebFont.load({
-			typekit: {
-			    id:''
-			}});
+				google: {
+					families: [ 'Raleway' ]		
+				}
+			});
 		});
 	</script>
 	<xsl:text disable-output-escaping="yes">

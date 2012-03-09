@@ -38,6 +38,7 @@ a {
 
 body {
 	@media screen and (min-width: 60em) { line-height: 27px; line-height: 1.688rem; }
+	font-family: "Helvetica Neue", sans-serif;
 }
 
 abbr[title] { border-bottom: 1px dotted; }
@@ -73,7 +74,8 @@ sub, sup { font-size: 8px; font-size: .5rem; line-height: 0; position: relative;
 sup { top: 8px; top: -0.5em; }
 sub { bottom: -4px; bottom: -0.25em; }
 
-#{headings()}, dt { color: $blue; }
+#{headings()}, dt { color: $blue; font-family: 'Raleway', 'Helvetica Neue', sans-serif; }
+
 h1 {
 	font-size: 36px;
 	font-size: 2.25rem;
