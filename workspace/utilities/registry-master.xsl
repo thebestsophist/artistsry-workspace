@@ -136,6 +136,7 @@
     <footer>
     	<div role="contentinfo">
     		<p>
+    			<xsl:text>Artists&#8217;ry, the open-source artists&#8217; registry. </xsl:text>
     			<a>
     				<xsl:attribute name="href">
 						<xsl:choose>
@@ -169,7 +170,7 @@
 	    	</p>
     	</div>
 		<div>
-			<p>Artists&#8217;ry, the open-source artists&#8217; registry. Designed by <a href="http://enguindesign.com">Enguin Design</a> and built with <a href="http://symphony-cms.com/">Symphony CMS</a>.</p>
+			<p>Designed by <a href="http://enguindesign.com">Enguin Design</a> and built with <a href="http://symphony-cms.com/">Symphony CMS</a>.</p>
 		</div>
 		
 		
