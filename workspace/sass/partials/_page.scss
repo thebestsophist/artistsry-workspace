@@ -36,9 +36,10 @@ header:after, section:after, footer:after { content: " "; clear: both; display: 
 header[role=banner] {
 
 	#registry-masthead {
-		a { text-decoration: none; }
-		a:visited { color: $blue; }
-		a:focus, a:hover { color: $light-blue; }
+		a { text-decoration: none;
+			&:visited { color: $blue; }
+			&:focus, &:hover { color: $light-blue; }
+		}
 
 		h1 {
 			@include one-column;
