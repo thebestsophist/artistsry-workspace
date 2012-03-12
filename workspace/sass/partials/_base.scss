@@ -43,8 +43,10 @@ $invalid-background-color: $light-red !default;
 
 
 /*
-	These are here in case you want to set elements at the type 
-	size instead of the grid size (eg for icons).
+	Most of the typography is being set in _overrides.scss
+	and _page.scss. These are here in case you want to set 
+	elements at the type size instead of the grid size (eg
+	for icons).
 */
 
 $ms-line-height-px-48: 24px;
@@ -135,7 +137,10 @@ $ms-5-rem: 5.063rem;
 	greater typographic	control and better size
 	control for images and other multimedia. Also, I'm 
 	not willing to give up that much control to
-	brainless browsers.
+	brainless browsers. I also dislike having text
+	jump around too much when the browser is resized.
+	It results in lost focus and forces readers to 
+	search for their place over and over.
 
 	Alternatively, I'm just not smart enough to think
 	in flexible grids. If you are, please edit
