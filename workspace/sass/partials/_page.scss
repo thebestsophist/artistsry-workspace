@@ -95,9 +95,10 @@ header[role=banner] {
 					padding: .132rem .444rem;
 					@include ms-base;
 					background: $blue;
+					
+					&:hover, &:focus { background: $light-blue; }
 
 				}
-				input[type=submit]:hover, input[type=submit]:focus { background: $light-blue; }
 			}
 
 		}
@@ -153,9 +154,9 @@ section[role=main] {
 						-o-transition: opacity 0.3s ease;
 						transition: opacity 0.3s ease;
 				}*/
+				
+				&:hover, &:focus { opacity: 100; }
 			}
-			
-			li:hover, li:focus { opacity: 100; }
 			
 			img {	// need to fix for responsive design
 				width: $ms-line-height-px-48 * 2;
@@ -407,9 +408,8 @@ li.website	{ padding: 0 0 0 $ms-line-height-px-48; padding: 0 0 0 $ms-line-heigh
 	width: 100%;
 	text-decoration: none; 
 	color: #9cf;
+	&:hover, &:focus { text-decoration: underline; color: #369;  }
 }
-
-.registry-first-time-nav a:hover, .registry-first-time-nav a:focus, .registry-edit-account-nav a:hover, .registry-edit-account-nav a:focus { text-decoration: underline; color: #369; }
 
 .registry-first-time-nav ul, .registry-edit-account-nav ul { list-style: none; }
 .registry-first-time-nav li { 
@@ -436,9 +436,9 @@ li.website	{ padding: 0 0 0 $ms-line-height-px-48; padding: 0 0 0 $ms-line-heigh
 }
 
 .registry-first-time-nav li.registry-step-complete:before {	color: $light-blue; }
-.registry-step-complete a { color: $blue; }
-.registry-step-complete a:hover, .registry-step-complete a:focus { color: $light-blue; }
-
+.registry-step-complete a { color: $blue; 
+	&:hover, &:focus { color: $light-blue; }
+}
 form.form-upload-avatar {
 	width: 100%;
 	clear: both;
@@ -530,9 +530,9 @@ form.form-upload-avatar img {
 	background-color: $red;
 
 	@include buttonification;
+	
+	&:hover, &:focus { background-color: $light-red; }
 }
-
-.kill:hover, .kill:focus { background-color: $light-red; }
 
 .go {
 	@include one-column;
@@ -549,12 +549,15 @@ form.form-upload-avatar img {
 	background-color: $blue;
 
 	@include buttonification;
+	
+	&:hover, &:focus { background-color: $light-blue; }
 }
 
-.go:hover, .go:focus { background-color: $light-blue; }
 
-a.go { display: block; @include one-column; text-align: center; text-decoration: none; }
-a.go:hover, a.go:focus { color: $white; }
+
+a.go { display: block; @include one-column; text-align: center; text-decoration: none; 
+	&:hover, &:focus { color: $white; }
+}
 
 /* Announcements */
 section.announcement {
@@ -611,9 +614,9 @@ section[role=main] section.announcement div h1 { font-size: $ms-line-height-px-4
 	padding: 4px 8px;
 	padding: .25rem .5rem;
 	color: $white;
+	
+	&:hover, &:focus { color: $light-blue; }
 }
-
-.feedback-button > a:hover, .feedback-button > a:focus { color: $light-blue; }
 
 /*	Page Specific styles */
 #artist_page {
