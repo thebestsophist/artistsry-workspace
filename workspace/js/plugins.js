@@ -21,8 +21,6 @@ $(window).resize(function () {
 
 });
 
-// Sets screen properties as cookies for server-side optimization
-$(screen).resize(function() {
 function getDevicePixelRatio() {
 	if(window.devicePixelRatio === undefined) return 1; // No pixel ratio available. Assume 1:1.
 	return window.devicePixelRatio;
@@ -33,6 +31,8 @@ function getWindowOrientation() {
 	return window.orientation;
 }
 
+// Sets screen properties as cookies for server-side optimization
+$(screen).resize(function() {
 	document.cookie = "screen-width=" + screen.width + "; path=/";
 	document.cookie = "screen-height=" + screen.height + "; path=/";
 	document.cookie = "pixel-density=" + getDevicePixelRatio() + "; path=/";
