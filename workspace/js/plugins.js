@@ -18,11 +18,12 @@ window.log = function(){
 $(window).resize(function () {
 var pixel_density = window.devicePixelRatio || 1,
 
+	document.cookie = "pixel-density=" + pixel_density + "; path=/";
 	document.cookie = "window-width=" + $(window).width() + "; path=/";
 	document.cookie = "window-height=" + $(window).height() + "; path=/";
 	document.cookie = "screen-width=" + screen.width + "; path=/";
 	document.cookie = "screen-height=" + screen.height + "; path=/";
-	document.cookie = "pixel-density=" + pixel_density + "; path=/";
+
 });
 
 window.addEventListener(orientationEvent, function() {
