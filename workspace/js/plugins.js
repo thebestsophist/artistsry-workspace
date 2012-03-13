@@ -18,6 +18,7 @@ window.log = function(){
 $(window).resize(function () {
 	document.cookie = "window-width=" + $(window).width() + "; path=/";
 	document.cookie = "window-height=" + $(window).height() + "; path=/";
+
 });
 
 // Sets screen properties as cookies for server-side optimization
@@ -27,20 +28,18 @@ function getDevicePixelRatio() {
 	return window.devicePixelRatio;
 }
 
-	document.cookie = "screen-width=" + screen.width + "; path=/";
-	document.cookie = "screen-height=" + screen.height + "; path=/";
-	document.cookie = "pixel-density=" + getDevicePixelRatio() + "; path=/";
-});
-
-// Sets window orientation properties as cookies for server-side optimization
-window.addEventListener(orientationEvent, function() {
 function getWindowOrientation() {
 	if(window.orientation === undefined) return 0;
 	return window.orientation;
 }
 
+	document.cookie = "screen-width=" + screen.width + "; path=/";
+	document.cookie = "screen-height=" + screen.height + "; path=/";
+	document.cookie = "pixel-density=" + getDevicePixelRatio() + "; path=/";
 	document.cookie = 'screen-orientation=' + getWindowOrientation() + '; path=/';
+
 });
+
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
 /*! fancyBox v2.0.4 fancyapps.com | fancyapps.com/fancybox/#license */
