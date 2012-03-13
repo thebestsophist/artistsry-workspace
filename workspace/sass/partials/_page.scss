@@ -53,7 +53,7 @@ header[role=banner] {
 		}
 		
 		> nav {
-			font-family: 'Raleway', 'Helvetica Neue', sans-serif;
+			font-family: 'Helvetica Neue', sans-serif;
 			li { float: left; @include gutter-right; 
 				mark a { text-decoration: underline; font-style: normal; color: $blue; background: $white; }
 			}
@@ -106,7 +106,9 @@ header[role=banner] {
 		
 		nav { font-size: 18px; font-size: 1.25rem; margin-top: $ms-line-height-px-48; margin-top: $ms-line-height-rem-48; }
 		
-		nav#registry-nav { float: left; clear: both; font-size: $ms-line-height-px-48; font-size: $ms-line-height-rem-48; }
+		nav#registry-nav {
+			font-family: 'Raleway', 'Helvetica Neue', sans-serif;
+			float: left; clear: both; font-size: $ms-line-height-px-48; font-size: $ms-line-height-rem-48; }
 	}
 }
 
