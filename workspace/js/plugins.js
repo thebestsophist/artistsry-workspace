@@ -19,10 +19,6 @@ $(window).resize(function () {
 	document.cookie = "window-width=" + $(window).width() + "; path=/";
 	document.cookie = "window-height=" + $(window).height() + "; path=/";
 
-});
-
-// Sets screen properties as cookies for server-side optimization
-$(screen).resize(function() {
 function getDevicePixelRatio() {
 	if(window.devicePixelRatio === undefined) return 1; // No pixel ratio available. Assume 1:1.
 	return window.devicePixelRatio;
@@ -39,7 +35,9 @@ function getWindowOrientation() {
 
 	document.cookie = 'screen-orientation=' + getWindowOrientation() + '; path=/';
 
+
 });
+
 
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
