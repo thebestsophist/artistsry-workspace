@@ -229,10 +229,22 @@ section[role=main] {
 	clear: right;
 }
 
+/* Footer */
+
 body > footer {
 	margin-top: $ms-line-height-px-48 * 2;
 	margin-top: $ms-line-height-rem-48 * 2;
+
+	div[role=contentinfo] {
+		@include two-column;
+		float: left;
+	}
+	
+	div {
+		float: right;
+	}
 }
+
 
 /* =============================================================================
    Widgets
