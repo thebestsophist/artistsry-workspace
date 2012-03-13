@@ -42,8 +42,8 @@ $(document).ready(function(){
 	getWindowProperties();
 	getScreenProperties();
 });
-$(window).resize(getWindowProperties());
-$(screen).resize(getScreenProperties());
+$(window).resize(getWindowProperties);
+$(screen).resize(getScreenProperties);
 
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
