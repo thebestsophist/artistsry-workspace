@@ -34,8 +34,12 @@ function getDevicePixelRatio() {
 
 // Sets window orientation properties as cookies for server-side optimization
 window.addEventListener(orientationEvent, function() {
-	window-orientation = window.orientation || 0,
-	document.cookie = 'screen-orientation=' + window-orientation + '; path=/';
+function getWindowOrientation() {
+	if(window.orientation === undefined) return 0;
+	return window.orientation;
+}
+
+	document.cookie = 'screen-orientation=' + getWindowOrientation() + '; path=/';
 });
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
