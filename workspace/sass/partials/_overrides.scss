@@ -182,6 +182,7 @@ textarea {
 
 
 button, input[type=submit] {
+	font-family: 'Raleway', 'Helvetica Neue', sans-serif; 
 	float: right; 
 	clear: left;
 	@include gutter-left;

@@ -53,6 +53,7 @@ header[role=banner] {
 		}
 		
 		> nav {
+			font-family: 'Raleway', 'Helvetica Neue', sans-serif;
 			li { float: left; @include gutter-right; 
 				mark a { text-decoration: underline; font-style: normal; color: $blue; background: $white; }
 			}
