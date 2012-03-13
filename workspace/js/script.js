@@ -18,7 +18,7 @@ $(".announcements").tabs({ fx: { opacity: 'toggle' } });
 	$(".feedback-button a").fancybox();
 
 /* MarkItUp for textareas */
-	$("form textarea").markItUp(mySettings);
+//	$("form textarea").markItUp(mySettings);
 
 
 });

@@ -14,6 +14,15 @@ window.log = function(){
 (function(b){function c(){}for(var d="assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,timeStamp,profile,profileEnd,time,timeEnd,trace,warn".split(","),a;a=d.pop();){b[a]=b[a]||c}})((function(){try
 {console.log();return window.console;}catch(err){return window.console={};}})());
 
+// Sets window properties as cookies for server-side optimizations
+$(window).resize(function () {
+	document.cookie = "window-width=" + $(window).width() + "; path=/";
+	document.cookie = "window-height=" + $(window).height() + "; path=/";
+	document.cookie = "screen-width=" + screen.width + "; path=/";
+	document.cookie = "screen-height" + screen.height + "; path=/";
+});
+
+
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
 /*! fancyBox v2.0.4 fancyapps.com | fancyapps.com/fancybox/#license */
 (function(t,q,e){var l=e(t),r=e(q),a=e.fancybox=function(){a.open.apply(this,arguments)},s=!1;e.extend(a,{version:"2.0.5",defaults:{padding:15,margin:20,width:800,height:600,minWidth:200,minHeight:200,maxWidth:9999,maxHeight:9999,autoSize:!0,fitToView:!0,aspectRatio:!1,topRatio:0.5,fixed:!(e.browser.msie&&6>=e.browser.version)&&"undefined"==typeof q.createTouch,scrolling:"auto",wrapCSS:"fancybox-default",arrows:!0,closeBtn:!0,closeClick:!1,nextClick:!1,mouseWheel:!0,autoPlay:!1,playSpeed:3E3,modal:!1,
