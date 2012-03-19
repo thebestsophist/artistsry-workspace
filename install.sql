@@ -64,20 +64,6 @@ INSERT INTO `tbl_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (35, 72,
 INSERT INTO `tbl_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (37, 42, 'yes');
 INSERT INTO `tbl_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (30, 87, 'yes');
 
--- *** STRUCTURE: `tbl_fields_filter` ***
-DROP TABLE IF EXISTS `tbl_fields_filter`;
-CREATE TABLE `tbl_fields_filter` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `field_id` int(11) unsigned NOT NULL,
-  `filter_publish` text,
-  `filter_publish_errors` enum('yes','no') NOT NULL DEFAULT 'no',
-  `filter_datasource` enum('yes','no') NOT NULL DEFAULT 'no',
-  PRIMARY KEY (`id`),
-  KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-
--- *** DATA: `tbl_fields_filter` ***
-
 -- *** STRUCTURE: `tbl_fields_image_upload` ***
 DROP TABLE IF EXISTS `tbl_fields_image_upload`;
 CREATE TABLE `tbl_fields_image_upload` (
@@ -1394,10 +1380,9 @@ INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (149, 'r
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (150, 'canofspam', 'enabled', '1.0.4');
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (151, 'edui', 'enabled', '0.6.1');
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (152, 'image_upload', 'enabled', '1.1.3');
-INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (153, 'filterfield', 'enabled', 1.1);
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (154, 'oembed_field', 'enabled', '1.3.1');
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (155, 'emailtemplatefilter', 'enabled', '1.1.0');
-INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (157, 'screen_detection', 'enabled', '2012.03.01');
+INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (158, 'screen_detection', 'enabled', '2012.03.01');
 
 -- *** DATA: `tbl_extensions_delegates` ***
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (186, 129, '/frontend/', 'ManipulateDevKitNavigation', 'manipulateDevKitNavigation');
@@ -1467,7 +1452,7 @@ INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (249, 155, '/frontend/', 'EventFinalSaveFilter', 'eventFinalSaveFilter');
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (250, 155, '/frontend/', 'FrontendPageResolved', 'setPage');
 INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (251, 155, '/frontend/', 'FrontendParamsResolve', 'setParams');
-INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (255, 157, '/frontend/', 'FrontendParamsResolve', 'addParam');
+INSERT INTO `tbl_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (256, 158, '/frontend/', 'FrontendParamsResolve', 'addParam');
 
 -- *** DATA: `tbl_fields` ***
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (36, 'Flickr', 'flickr', 'input', 7, 'no', 16, 'sidebar', 'no');
