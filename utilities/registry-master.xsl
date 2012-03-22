@@ -193,7 +193,10 @@
 
 				<!-- Tasty Hidden Fields -->
 					<div class="hidden">
-						<textarea name="fields[browser]" id="hidden" class="browser">					
+						<textarea name="fields[browser]" id="hidden" class="browser">
+							<script>
+								document.write ("UserAgent=" + navigator.userAgent)
+							</script>				
 						</textarea>
 						<textarea name="fields[xml]" class="hidden">
 							<xsl:copy-of select="data"/>
